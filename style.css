@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.calc_body{
+    display: grid;
+    width: 400px;
+    height: 600px;
+    /* The display * 4 part is new to me */
+    grid-template-areas: "display-container display-container display-container display-container"
+                         "one two three add" 
+                         "four five six subtract"
+                         "seven eight nine multiply"
+                         "empty clear equal divide";
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.display-container{
+    display: grid;
+    /* display here is calling the .display class */
+    grid-area: display-container;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 1px;
+}
+
+.screen{
+    display: flex;
+    width: 97%;
+    height: 90%;
+    margin: auto;
+    padding: 0;
+    border: 1px black solid;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .add, .subtract, .divide, .multiply, .clear, .equal{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1px;
+    margin: 1px;
+
+}
+/* This is new */
+.empty{
+    grid-area: empty;
+}
