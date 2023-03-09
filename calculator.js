@@ -65,10 +65,49 @@ async function display(){
                 num2 = Number(dElem2);
                 const answer = operate(operator,num1, num2);
                 displayElement.textContent = answer;
+                //dElem1 =
         }
         });
+        
     });
-    
+
+    document.addEventListener('keydown', (event) => {
+        if([1,2,3,4,5,6,7,8,9].includes(parseInt(event.key))){
+            if(!operator){
+                dElem1 += event.key;
+                displayElement.textContent += event.key;
+            }
+            else{
+                dElem2 += event.key;
+                displayElement.textContent += event.key;
+            }
+        }
+        else if(['*','-','+','/'].includes(event.key)){
+
+            operator = event.key;
+            displayElement.textContent += event.key;
+            }
+        else if(event.key == '=' || event.key == 'Enter'){
+            num1 = Number(dElem1);
+            num2 = Number(dElem2);
+            const answer = operate(operator,num1,num2);
+            displayElement.textContent = answer;
+        }
+        //Can't figure out how to not have to backspace past '' to reset value...
+        else if(displayElement.textContent == ''){
+            displayElement.textContent = '';
+            dElem1 = '';
+            dElem2 = '';
+            operator = '';
+        }
+        else if(event.key == 'Backspace'){
+            if(displayElement.textContent.length > 0){
+                displayElement.textContent = displayElement.textContent.slice(0,-1);
+            }
+        }
+    });
+
+
     const clearElement = document.querySelector('.clear');
     clearElement.addEventListener('click', ()=>{
         displayElement.textContent = '';

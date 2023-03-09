@@ -15,13 +15,14 @@ body{
     border: 1px black solid;
     border-radius: 10px;
     padding: 5px;
+    background-color: rgb(34, 31, 31);
 }
 
 .display-container{
     display: grid;
     /* display here is calling the .display class */
     grid-area: display-container;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 10px;
     padding: 1px;
     margin: 1px;
@@ -33,11 +34,12 @@ body{
     height: 90%;
     margin: auto;
     padding: 0;
-    border: 1px black solid;
+    border: 1px white solid;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: rgb(241, 230, 230);
 }
 
 .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .add, .subtract, .divide, .multiply, .clear, .equal{
@@ -48,6 +50,7 @@ body{
     border-radius: 15px;
     padding: 1px;
     margin: 1px;
+    background-color: rgb(231, 19, 19);
 
 }
 /* This is new */
