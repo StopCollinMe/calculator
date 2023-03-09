@@ -1,19 +1,7 @@
-function add(num1,num2){
-    return num1 + num2;
-}
-
-function subtract(num1,num2){
-    return num1 - num2;
-
-}
-
-function multiply(num1,num2){
-    return num1 * num2;
-}
-
-function divide(num1,num2){
-    return num1 / num2;
-}
+function add(num1,num2){ return num1 + num2; }
+function subtract(num1,num2){ return num1 - num2; }
+function multiply(num1,num2){ return num1 * num2; }
+function divide(num1,num2){ return num1 / num2; }
 
 function operate(sign, num1,num2){
     if(sign == '+'){
@@ -72,7 +60,7 @@ async function display(){
     });
 
     document.addEventListener('keydown', (event) => {
-        if([1,2,3,4,5,6,7,8,9].includes(parseInt(event.key))){
+        if([1,2,3,4,5,6,7,8,9,0].includes(parseInt(event.key))){
             if(!operator){
                 dElem1 += event.key;
                 displayElement.textContent += event.key;
